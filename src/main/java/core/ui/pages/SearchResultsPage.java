@@ -13,7 +13,6 @@ public class SearchResultsPage extends AbstractPage {
     }
 
     public void clickComprarTab() {
-        this.click(comprarTab);
-
+        this.clickOnIntercepted(comprarTab);
     }
 }
