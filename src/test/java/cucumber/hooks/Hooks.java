@@ -8,7 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class Hooks {
-    @After
+    @After("@ui")
     public static void takeScreenshot(Scenario scenario) {
         if (scenario.isFailed()) {
             WebDriver driver = DriverManager.getInstance().getDriver();
