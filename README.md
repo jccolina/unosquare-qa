@@ -4,6 +4,8 @@
     * If error when installing dependencies then remove current java version and install again.
     * Suggested source Amazon Correto: https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html
 3. Have installed IntelliJ IDE:  https://www.jetbrains.com/idea/download/#section=windows
+4. Configure Java 11 from IntelliJ IDE:
+    * File > Project Structure > Language Level  
 
 ### How to Run
 1. Clone repo:   
@@ -27,16 +29,17 @@ Open ``overview-features.html`` to see html report.
 
 ### Structure
 1. Cucumber ui tests in ``src/test/resources/scenarios/searchValidation``  
-3. Step definitions for cucumber in ``src/test/java/cucumber/steps``  
-4. Runner specifying scenarios folder and plugin report in ``src/test/java/cucumber/runner``  
-5. Page objects for webui in ``src/main/java/core/ui/pages``  
+2. Step definitions for cucumber in ``src/test/java/cucumber/steps``  
+3. Runner specifying scenarios folder and plugin report in ``src/test/java/cucumber/runner``  
+4. Page objects for webui in ``src/main/java/core/ui/pages``  
+5. Screenshot taken when test failed  
 6. Driver Manager in ``src/main/java/core/ui/driver`` create webdriver and make sure to have only a driver during whole execution. 
 If tests are executed in parallel implemented thread safe to not mix webdrivers.
-11. WebDriverManager will automatically download the required driver for current browser so no need to do it manually.  
-14. To change browser modify the file environment.json > "browser": "chrome"  
-    Values allowed (non case sensitive):  
-    * CHROME,
-    * FIREFOX
+7. WebDriverManager will automatically download the required driver for current browser so no need to do it manually.  
+8. To change browser modify the file environment.json > "browser": "chrome"  
+   Values allowed (non case sensitive):  
+   * CHROME,
+   * FIREFOX
     
 ## API
 ### Frameworks/Libraries
