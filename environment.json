@@ -1,0 +1,6 @@
+{
+  "browser": "chrome",
+  "webUrl": "https://www.microsoft.com/es-mx",
+  "apiUrl": "http://dummy.restapiexample.com/api/v1",
+  "searchKeyword": "xbox"
+}
