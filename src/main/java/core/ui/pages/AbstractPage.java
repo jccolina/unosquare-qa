@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.function.Function;
+
 /**
  * Abstract class to initialize webdriver which will be shared with all child page objects.
  * Also groups common actions over web elements like click, send text, etc.
@@ -31,6 +33,18 @@ public abstract class AbstractPage {
     public void click(final WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
+    }
+
+    public void clickOnIntercepted(final WebElement element) {
+        wait.ignoring(ElementClickInterceptedException.class)
+                        .ignoring(NoSuchElementException.class);
+        wait.until(new Function<WebDriver, WebElement>() {
+            @Override
+            public WebElement apply(WebDriver webDriver) {
+                element.click();
+                return element;
+            }
+        });
     }
 
     public void sendText(final WebElement element, final Keys keys) {
